@@ -1,0 +1,19 @@
+NTP to DCF77 converter for ESP8266. 
+
+This code development on Platformio used by NTPClient library.
+Only 1 second order sycronazation.
+
+Please set the value in top of source code.
+
+NTPSERVER - ntp server
+TIMEOFFSET - time zone
+DCF77OUT - DCF77 out pin
+ssid[] - your wifi ssid
+passwd[] - your wifi password
+
+Output is 5 minutes and go deepsleep.
+PON connect to Reset by condencer for wakeup.
+
+This code is BSD licence.
+
+Hiroki Mori
