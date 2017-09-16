@@ -165,8 +165,6 @@ void setup() {
   timeClient.begin();
   timeClient.update();
 
-  WiFi.disconnect();
-
   unixtime = timeClient.getEpochTime();
   starttime = unixtime;
   count = (unixtime % 60) * 10;
@@ -176,6 +174,12 @@ void setup() {
     ESP.deepSleep(0);
     return;
   }
+
+  WiFi.disconnect();
+  delay(1);
+  WiFi.mode(WIFI_OFF);
+  WiFi.forceSleepBegin();
+  delay(1);
 
   pinMode(DCF77OUT, OUTPUT);
   noInterrupts();
